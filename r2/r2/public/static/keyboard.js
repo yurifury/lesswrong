@@ -11,16 +11,13 @@
     return $(comment_el).children('.parent').children('a').attr('name');
   };
   
-  comment_tree = {};
-  $('.comment').each(function(index, comment) {
-    var comment_id = get_comment_id(comment);
-    comment_tree[comment_id] = {};
-    
-    var parent_comment = get_parent_comment(comment);
-    if (is_comment(parent_comment)) {
-      comment_tree[comment_id] = get_comment_id(parent_comment);
-    }
-  });
-  console.log(comment_tree);
-  // return parent_comment($('.comment')[2]);
+  var get_child = function(comment_el) {
+    return $(comment_el).children('.child').children('.sitetable').children('.comment')[0];
+  };
+  
+  var get_next_sibling = function(comment_el) {
+    return $(comment_el).siblings('.comment').first()[0];
+  }
+  
+  console.log(get_next_sibling($('#thingrow_t1_4wrh')[0]));
 })(jQuery);
