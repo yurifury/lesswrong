@@ -17,7 +17,7 @@
   
   var get_next_sibling = function(comment_el) {
     return $(comment_el).siblings('.comment').first()[0];
-  }
+  };
   
-  console.log(get_next_sibling($('#thingrow_t1_4wrh')[0]));
+  // console.log(get_next_sibling($('#thingrow_t1_3238')[0]));
 })(jQuery);
